@@ -49,4 +49,4 @@ Seal channel: 5 and 10 share a root (weep/ingress at connections); 11 shares the
 
 ## Open column to fill (proportionality) — the finding lives here
 For each row: was the automated response PROPORTIONATE to the actual deviation,
-or did the response itself become the larger failure? (e.g. row 2: trace drift -> full safe-stop.)
+or did the response itself become the larger failure? (e.g. row 2a: trace drift -> full safe-stop.)

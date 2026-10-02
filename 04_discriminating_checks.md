@@ -38,14 +38,14 @@ the matched-batch bench arms (see README, "Next run").
 
 | Trigger | Actual deviation | Automated response | Verdict |
 |---------|------------------|--------------------|---------|
-| row 2 quality -> safe-stop | trace optical offset | full stop | GROSSLY DISPROPORTIONATE |
+| row 2a quality -> safe-stop | trace optical offset | full stop | GROSSLY DISPROPORTIONATE |
 | C1 -> high-confidence safe-stop | one shared cause | hard stop, maybe live lane | DISPROPORTIONATE + false confidence |
 | C3 -> 5 mph limp + service lockout | trace NOx/soot drift | truck legally crippled | GROSSLY DISPROPORTIONATE |
 | C4 -> condemn injection system | seals/dye | multi-part replace | DISPROPORTIONATE + wrong parts |
 | row 3 O2 -> adaptive relearn | small AFR offset | wrong trim locked into memory | SUBTLE under-reaction that persists |
 
 ### Two opposite failure shapes on one axis
-- OVER-REACTION: trace drift -> stop / lockdown / condemn  (C1, C3, C4, row 2)
+- OVER-REACTION: trace drift -> stop / lockdown / condemn  (C1, C3, C4, row 2a)
 - UNDER-REACTION: drift quietly absorbed -> wrong baseline locked, drives on  (row 3, 6)
 
 The proportionality column ranks WHERE the automated response itself becomes the
