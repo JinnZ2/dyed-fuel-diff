@@ -6,8 +6,11 @@ NOT validated. Checks are cheap/field-level and inferential except D7.
 ## Principle
 A SHARED hidden cause (dye / carrier / seal attack) leaves signatures that TRUE
 independent faults do not. Each check below exploits one such signature.
-Order of power: D7 confirms dye is present; D1-D6 establish that the dye is the
-cause of the cluster (presence is necessary, not sufficient).
+Order of power: D7 confirms dye is present (necessary, not sufficient).
+D1-D6 discriminate a SHARED FUEL-BATCH CAUSE from independent faults. They do NOT
+isolate the dye: a tank change moves base fuel, dye, carrier/additive package,
+storage contamination and water together. Isolating the dye or its carrier needs
+the matched-batch bench arms (see README, "Next run").
 
 ## Discriminating checks (shared-cause vs genuine multi-fault)
 

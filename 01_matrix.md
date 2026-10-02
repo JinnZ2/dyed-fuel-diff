@@ -26,7 +26,8 @@ fault's action. The action can be a larger failure than the deviation that trigg
 | # | Sensor | Measurand | Dye coupling (true cause) | Misnamed as | Automated action | Consequence | Channel |
 |---|--------|-----------|---------------------------|-------------|------------------|-------------|---------|
 | 1 | Fuel level (optical/dielectric) | tank volume | dye shifts light transmission / dielectric const | low fuel / implausible level / sender fault | range replan, early refuel divert, or ignore sender | false divert, or runs tank low on bad estimate | signal (direct) |
-| 2 | Fuel quality / water-in-fuel | contamination state | dye absorbance read as turbidity | contamination detected | derate / refuse-continue / safe-stop | mechanically-fine truck stops, maybe live lane | signal (direct) |
+| 2a | Fuel quality / WIF — OPTICAL type | contamination state | dye absorbance read as turbidity | contamination detected | derate / refuse-continue / safe-stop | mechanically-fine truck stops, maybe live lane | signal (direct) |
+| 2b | Fuel quality / WIF — CAPACITIVE type | contamination state | carrier/blend shifts fuel dielectric constant; dye molecule itself minor here | water detected | derate / refuse-continue / safe-stop | same as 2a | signal (direct, via carrier) |
 | 3 | O2 (wideband) | exhaust O2 / AFR | carrier trace HC+metals offset mixture result | lean/rich fault, O2 sensor aging | fuel trim correction, adaptive relearn | trims toward wrong target, drives on bad mix | signal (indirect) |
 | 4 | NOx (up/down stream) | NOx ppm | post-combustion offset from altered burn | SCR efficiency / emissions fault | regulatory derate / limp mode | rolling roadblock mid-route | signal (indirect) |
 | 5 | Rail pressure | injection pressure | seal weep at fittings bleeds pressure | rail pressure low, pump/injector fault | derate, limit power, fault-stop | chases pump/injector; real cause is a seal | MECHANICAL masked as signal |
@@ -36,6 +37,8 @@ fault's action. The action can be a larger failure than the deviation that trigg
 | 9 | Fuel temp | fuel temp | minor property shift with blend | implausible temp / sensor fault | compensation tweak | small trim error | signal (minor) |
 | 10 | Fuel pressure (low side) | lift-pump pressure | seal / air ingress at connections | lift pump fault, filter clog | derate, warn | chases pump/filter; cause is connection | MECHANICAL masked as signal |
 | 11 | Injector feedback (balance/leak-down) | per-cyl correction | seal/material change in injector | injector imbalance / fault | injector cutout / replace flag | matched-set replace on good injectors | MECHANICAL masked as signal |
+
+Rows 2a/2b: which principle a given truck uses is UNVERIFIED per vehicle; check the installed part before reading either row.
 
 Camera / optical autonomy sensors: OUT OF SCOPE — not fuel-coupled. Listed only to bound the set.
 
